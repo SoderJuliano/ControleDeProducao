@@ -20,6 +20,7 @@ public class Tela01 extends javax.swing.JPanel {
         jFrame.add(this);
         jFrame.setVisible(true);
         jFrame.setSize(1024, 940);
+        
     }
 
     /**
