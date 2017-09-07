@@ -30,8 +30,9 @@ public class ControleDeProducao {
         }
         Tela00 t = new Tela00();
         t.setVisible(true);
-        t.setSize(900, 640);
-        t.setBackground(Color.red);
+        String st = a.get(0)+a.get(1);
+        a.add(st);
+        t.getLoguins(a);
         
         /*m.setProduction(380, 95);
         System.out.println(m.getProducao("19.08.2017"));

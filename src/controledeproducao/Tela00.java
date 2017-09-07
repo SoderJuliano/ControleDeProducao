@@ -18,10 +18,26 @@ public class Tela00 extends javax.swing.JFrame {
     /**
      * Creates new form Tela00
      */
-    ArrayList<String> usuarioAcesso = new ArrayList();
+    private ArrayList<String> loguins = new ArrayList();
     public Tela00() {
         initComponents();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    public boolean CheckLoguin(String loguin, String senha){
+	String chave = loguin+senha;
+	boolean validacao = false;
+	for(String a: loguins){
+		if(a.equals(chave)){
+		validacao = true;
+                System.out.println("chave --> "+chave+" validacao --> "+ validacao);
+		}
+	}
+       return validacao;
+    }
+    public void getLoguins(ArrayList<String> array){
+	for(Object a: array){
+            loguins.add((String) a);
+	}
     }
 
     /**
@@ -121,12 +137,12 @@ public class Tela00 extends javax.swing.JFrame {
 
     private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
         // TODO add your handling code here:
-       if(usuario.getText().equals(this.usuarioAcesso)){
-            Tela01 t = new Tela01();
+       if(!this.CheckLoguin(usuario.getText(), senha.getText())){
+            JOptionPane.showMessageDialog(null,"Acesso negado!");
+       }else{
+           Tela01 t = new Tela01();
             t.setVisible(true);
             this.dispose();   
-       }else{
-           JOptionPane.showMessageDialog(null,"Acesso negado!");
        }
         
     }//GEN-LAST:event_entrarActionPerformed
