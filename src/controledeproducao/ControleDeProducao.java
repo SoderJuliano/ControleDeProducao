@@ -20,7 +20,9 @@ public class ControleDeProducao {
      */
     public static void main(String[] args) throws FileNotFoundException {
         // TODO code application logic here
-       
+        
+        Conexao c = new Conexao();
+       c.conectar();
         Maquina m = new Maquina();
         PersistenciaProducao p = new PersistenciaProducao();
         ArrayList<String> a = new ArrayList();
