@@ -34,9 +34,11 @@ public class NewUser extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField1.setText("jTextField1");
-
-        senha.setText("jTextField2");
+        senha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                senhaActionPerformed(evt);
+            }
+        });
         senha.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 senhaKeyPressed(evt);
@@ -84,6 +86,10 @@ public class NewUser extends javax.swing.JFrame {
         // fazer aqui um listener para reconhecer o enter e lançar uma inserção no banco de dados
         dispose();
     }//GEN-LAST:event_senhaKeyPressed
+
+    private void senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_senhaActionPerformed
 
     /**
      * @param args the command line arguments

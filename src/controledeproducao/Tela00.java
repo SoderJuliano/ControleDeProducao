@@ -5,7 +5,10 @@
  */
 package controledeproducao;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -55,6 +58,8 @@ public class Tela00 extends javax.swing.JFrame {
         label2 = new java.awt.Label();
         senha = new java.awt.TextField();
         usuario = new java.awt.TextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
 
@@ -76,17 +81,19 @@ public class Tela00 extends javax.swing.JFrame {
         label2.setText("Controle de Acesso - Acess Control");
 
         senha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        senha.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        senha.setText("password");
+        senha.setFont(new java.awt.Font("Arial", 2, 18)); // NOI18N
 
         usuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        usuario.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        usuario.setText("user");
+        usuario.setFont(new java.awt.Font("Arial", 2, 18)); // NOI18N
         usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usuarioActionPerformed(evt);
             }
         });
+
+        jLabel1.setText("Senha");
+
+        jLabel2.setText("Usuario");
 
         jMenu1.setText("new user");
         jMenuBar1.add(jMenu1);
@@ -101,16 +108,21 @@ public class Tela00 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addGap(121, 121, 121))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(senha, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(98, 98, 98))
             .addGroup(layout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 684, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(senha, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(98, 98, 98))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(49, 49, 49)
@@ -124,7 +136,11 @@ public class Tela00 extends javax.swing.JFrame {
                 .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(144, 144, 144)
+                .addGap(96, 96, 96)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(senha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(entrar, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE))
@@ -143,6 +159,7 @@ public class Tela00 extends javax.swing.JFrame {
 
     private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
         // TODO add your handling code here:
+       
     }//GEN-LAST:event_usuarioActionPerformed
 
     private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
@@ -150,9 +167,13 @@ public class Tela00 extends javax.swing.JFrame {
        if(!this.CheckLoguin(usuario.getText(), senha.getText())){
             JOptionPane.showMessageDialog(null,"Acesso negado!");
        }else{
-           Tela01 t = new Tela01();
-            t.setVisible(true);
-            this.dispose();   
+           try {
+               Tela01 t = new Tela01();
+               t.setVisible(true);
+               this.dispose();
+           } catch (SQLException ex) {
+               Logger.getLogger(Tela00.class.getName()).log(Level.SEVERE, null, ex);
+           }
        }
         
     }//GEN-LAST:event_entrarActionPerformed
@@ -194,6 +215,8 @@ public class Tela00 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button entrar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;

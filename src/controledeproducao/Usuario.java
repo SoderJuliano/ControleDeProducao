@@ -1,3 +1,5 @@
+package controledeproducao;
+
 
 import controledeproducao.PersistenciaProducao;
 import java.io.FileNotFoundException;
@@ -19,11 +21,13 @@ public class Usuario {
     
     private String chave;
     
-    PersistenciaProducao p = new PersistenciaProducao();
-    ArrayList<String> array = new ArrayList();
     
-    public void iniciarUser() throws FileNotFoundException{
-        array = p.pegarProducao();
-        chave = array.get(0)+array.get(1);
+    public void addNomeSenha(String n, String s){
+        this.nome = n;
+        this.senha = s;
+         chave = n+s;
+    }
+    public String getChave(){
+        return this.chave;
     }
 }
