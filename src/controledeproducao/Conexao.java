@@ -58,16 +58,23 @@ public class Conexao {
         ArrayList<Object> n2 = new ArrayList();
         PreparedStatement stm = con.prepareStatement(q);
         ResultSet rs = stm.executeQuery(q);
-        if (rs.next()) {
-            for(int i =0;i<n2.size();i++){
+        
+            while(rs.next()){
                 Maquina u = new Maquina();
-                System.out.println(rs.getString(1));
                 u.setNome(rs.getString(1));
                 n.add(u); 
+                System.out.println("conexão -> "+u.getName());
             }
-        }else{
+            /*for(int i =0;i<n.size();i++){
+                
+                Maquina u = new Maquina();
+                System.out.println(rs.getString(i));
+                u.setNome(rs.getString(1));
+                n.add(u); 
+            }*/
+     /*   }else{
             System.out.println(rs.first());
-        }
+        }*/
         return n;
     }
 }

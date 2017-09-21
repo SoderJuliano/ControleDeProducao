@@ -35,7 +35,11 @@ public class Tela01 extends javax.swing.JPanel {
         c.conectar();
         String queryM = "select * from maquina";
         m = c.pegarMaquinas(queryM);
-        System.out.println(m.get(0).getName());
+        System.out.println("conexão -"+m.get(2).getName());
+        System.out.println("conexão -"+m.get(15).getName());
+        for(int i = 0; i<m.size(); i++){
+           System.out.println(m.get(i).getName());
+        }
         maq1.setText(m.get(0).getName());
         maq2.setText(m.get(1).getName());
         maq3.setText(m.get(2).getName());
