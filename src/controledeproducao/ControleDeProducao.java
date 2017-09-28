@@ -29,7 +29,7 @@ public class ControleDeProducao {
         
         
        ArrayList<String> a = new ArrayList();
-       PersistenciaProducao p = new PersistenciaProducao();
+       Persistencia1 p = new Persistencia1();
         
         a = p.pegarProducao();
         for(int i =0; i<p.pegarProducao().size(); i++){

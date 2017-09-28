@@ -53,28 +53,16 @@ public class Conexao {
         }
         return n;
     }
-    public ArrayList<Maquina> pegarMaquinas(String q) throws SQLException{ // ver...
+    public ArrayList<Maquina> pegarMaquinas(String q) throws SQLException{
         ArrayList<Maquina> n = new ArrayList();
-        ArrayList<Object> n2 = new ArrayList();
         PreparedStatement stm = con.prepareStatement(q);
         ResultSet rs = stm.executeQuery(q);
-        
-            while(rs.next()){
+        while(rs.next()){
                 Maquina u = new Maquina();
                 u.setNome(rs.getString(1));
                 n.add(u); 
                 System.out.println("conexão -> "+u.getName());
-            }
-            /*for(int i =0;i<n.size();i++){
-                
-                Maquina u = new Maquina();
-                System.out.println(rs.getString(i));
-                u.setNome(rs.getString(1));
-                n.add(u); 
-            }*/
-     /*   }else{
-            System.out.println(rs.first());
-        }*/
+        }
         return n;
     }
 }

@@ -130,8 +130,8 @@
         <Container class="javax.swing.JPanel" name="jPanel1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="tab1">
-                <Property name="tabTitle" type="java.lang.String" value="tab1"/>
+              <JTabbedPaneConstraints tabName="Controle de produ&#xe7;&#xe3;o">
+                <Property name="tabTitle" type="java.lang.String" value="Controle de produ&#xe7;&#xe3;o"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -141,7 +141,12 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="label2" min="-2" pref="103" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="label1" min="-2" pref="103" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
@@ -227,7 +232,7 @@
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jTextField4" min="-2" pref="103" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
                                       <Component id="maq1" min="-2" pref="103" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jTextField2" min="-2" pref="103" max="-2" attributes="0"/>
@@ -242,7 +247,12 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="label1" min="-2" max="-2" attributes="0"/>
+                          <Component id="label2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="maq1" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                           <Component id="jTextField2" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
@@ -322,7 +332,7 @@
                           <Component id="maq16" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                           <Component id="jTextField33" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="71" max="32767" attributes="0"/>
+                      <EmptySpace pref="63" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -394,6 +404,25 @@
             <Component class="javax.swing.JTextField" name="maq9">
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField48">
+            </Component>
+            <Component class="java.awt.Label" name="label1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Produ&#xe7;&#xe3;o"/>
+              </Properties>
+              <AccessibilityProperties>
+                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="M&#xe1;quinas"/>
+              </AccessibilityProperties>
+            </Component>
+            <Component class="java.awt.Label" name="label2">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="M&#xe1;quinas"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

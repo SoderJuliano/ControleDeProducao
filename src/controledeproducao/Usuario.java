@@ -1,7 +1,7 @@
 package controledeproducao;
 
 
-import controledeproducao.PersistenciaProducao;
+import controledeproducao.Persistencia1;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
@@ -25,7 +25,7 @@ public class Usuario {
     public void addNomeSenha(String n, String s){
         this.nome = n;
         this.senha = s;
-         chave = n+s;
+        this.chave = n+s;
     }
     public String getChave(){
         return this.chave;

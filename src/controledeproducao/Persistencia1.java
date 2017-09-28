@@ -18,10 +18,15 @@ import java.util.Scanner;
  *
  * @author Juliano
  */
-public class PersistenciaProducao {
+public class Persistencia1 {
     
-    File dir = new File("C:\\Users\\Juliano\\Desktop/p");
+    String diretorio = "C:\\Users\\Juliano\\Desktop/p";
+    File dir = new File(diretorio);
     File arq;
+    
+    public void novoDiretorio(String s){
+        this.dir.mkdir();
+    }
 
     public void gravarProducao(int v, String d) {
         this.arq = new File(dir, d+".txt");
